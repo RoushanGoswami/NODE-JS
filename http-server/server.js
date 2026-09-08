@@ -1,5 +1,5 @@
-import http from "http"; //importing http module, to create the server 
-import fs from "fs"; //importing fs module,
+import http from "http";
+import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 
@@ -11,7 +11,7 @@ const logFile = path.join(__dirname, "log.txt");
 const server = http.createServer((req, res) => {
   const time = new Date().toLocaleString("en-IN", {
     timeZone: "Asia/Kolkata",
-    hour12: true, // to make it 12 hour format
+    hour12: false,
   });
 
   const log = `[${time}] ${req.method} ${req.url}\n`;
@@ -24,18 +24,24 @@ const server = http.createServer((req, res) => {
     res.end("About Page");
   } else if (req.method === "GET" && req.url === "/page") {
     res.end("Page");
+  } else if (req.method === "POST" && req.url === "/") {
+    res.end("Home data added");
   } else if (req.method === "POST" && req.url === "/about") {
-    res.end("POST request received");
+    res.end("About data added");
   } else if (req.method === "POST" && req.url === "/page") {
-    res.end("POST request received");
+    res.end("Page data added");
+  } else if (req.method === "PUT" && req.url === "/") {
+    res.end("Home data updated");
   } else if (req.method === "PUT" && req.url === "/about") {
-    res.end("PUT request received");
+    res.end("About data updated");
   } else if (req.method === "PUT" && req.url === "/page") {
-    res.end("PUT request received");
+    res.end("Page data updated");
+  } else if (req.method === "DELETE" && req.url === "/") {
+    res.end("Home data deleted");
   } else if (req.method === "DELETE" && req.url === "/about") {
-    res.end("About deleted");
+    res.end("About data deleted");
   } else if (req.method === "DELETE" && req.url === "/page") {
-    res.end("Page deleted");
+    res.end("Page data deleted");
   } else {
     res.statusCode = 404;
     res.end("404 Not Found");
@@ -43,5 +49,7 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(3000, () => {
-  console.log("Server running at http://localhost:3000");
+  console.log("Server started successfully !");
 });
+
+//Invoke-WebRequest http://localhost:3000/about -Method POST -UseBasicParsingy
