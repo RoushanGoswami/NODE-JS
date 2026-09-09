@@ -10,6 +10,16 @@ The server receives client requests, checks the requested URL and HTTP method, a
 
 This project was created as part of my **Node.js learning journey** to understand how HTTP servers work internally.
 
+## 🎥 Project Demonstration
+
+Watch the complete project demonstration:
+
+[▶️ Watch the HTTP Server Project Video](https://drive.google.com/file/d/1Rzb-nACDdJD9bxR3srf71pvc3O8wB6bO/view?usp=sharing)
+
+The video demonstrates the project execution and testing of the HTTP server.
+
+---
+
 ---
 
 ## 🛠️ Technologies Used
@@ -184,16 +194,6 @@ Through this project, I learned:
 * How localhost and ports work
 * How to run Node.js applications from the terminal
 * How to manage a Node.js project with Git and GitHub
-
----
-
-## 🎥 Project Demonstration
-
-Watch the complete project demonstration:
-
-[▶️ Watch the HTTP Server Project Video](https://drive.google.com/file/d/1Rzb-nACDdJD9bxR3srf71pvc3O8wB6bO/view?usp=sharing)
-
-The video demonstrates the project execution and testing of the HTTP server.
 
 ---
 
