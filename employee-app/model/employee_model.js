@@ -8,7 +8,7 @@ export const employeeSchema = new mongoose.Schema(
     age: { type: String, required: true },
     salary: { type: String, required: true },
   },
-  { timestamps },
+  { timestamps: true },
 );
 
 export const Employee = mongoose.model("employee", employeeSchema);
