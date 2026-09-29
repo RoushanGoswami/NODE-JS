@@ -64,7 +64,9 @@ export const updateEmployee = async (req, res) => {
     //both will come from body -->req.body
     const employee = req.body;
     const id = req.body.id;
-    const result = await Employee.findByIdAndUpdate(id, employee);
+    const result = await Employee.findByIdAndUpdate(id, employee, {
+      new: true,
+    });
     res.json({
       status: true,
       message: "employee updated successfully !",
@@ -101,7 +103,7 @@ export const searchByName = async (req, res) => {
 export const searchById = async (req, res) => {
   try {
     const id = req.params.id;
-    const data = await Employee.find({ id });
+    const data = await Employee.find(id);
     res.json({
       status: true,
       message: "employee searched successfully !",

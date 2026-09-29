@@ -12,11 +12,11 @@ const router = express.Router();
 
 router.get("/", displayEmployee);
 router.post("/", insertEmployee);
-router.put("/", updateEmployee);
-router.delete("/", deleteEmployee);
+router.put("/:id", updateEmployee);
+router.delete("/:id", deleteEmployee);
 
-router.get("/name", searchByName);
-router.get("/id", searchById);
-router.get("/role", searchByRole);
+router.get("/name/:name", searchByName);
+router.get("/id/:id", searchById);
+router.get("/role/:role", searchByRole);
 
 export default router;
